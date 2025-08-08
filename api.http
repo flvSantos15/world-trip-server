@@ -1,0 +1,10 @@
+###
+GET http://localhost:3333/continents
+
+###
+POST http://localhost:3333/continents
+Content-Type: application/json
+
+{
+  "title": "teste"
+}

@@ -4,12 +4,31 @@
   "description": "server for the front end",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "dev": "tsx watch src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "flvSantos",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "@fastify/cors": "^11.1.0",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.2.1",
+    "drizzle-orm": "^0.44.4",
+    "fastify": "^5.4.0",
+    "fastify-type-provider-zod": "^5.0.3",
+    "json-server": "^0.17.0",
+    "pg": "^8.16.3",
+    "ts-node": "^10.9.2",
+    "zod": "^4.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "@types/pg": "^8.15.5",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
   }
 }
