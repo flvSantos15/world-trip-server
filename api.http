@@ -1,7 +1,4 @@
 ###
-GET http://localhost:3333/continents
-
-###
 POST http://localhost:3333/continents
 Content-Type: application/json
 
@@ -15,3 +12,9 @@ Content-Type: application/json
   "title": "América do Sul",
   "description": "Futebol e festas"
 }
+
+###
+GET http://localhost:3333/continents
+
+###
+GET http://localhost:3333/continent/1
