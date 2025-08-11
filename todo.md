@@ -26,3 +26,18 @@
 - Criar regra de não adicionar uma cidade que já existe.
 - Criar regra de não adicionar continente que já existe.
 
+
+## Rota
+
+[] - POST /continent
+[] - GET /continents
+[] - GET /continent/:id
+[] - PUT /continent/:id
+[] - DELETE /continent/:id
+
+[] - POST /continent/:id/cities
+[] - GET /continent/:id/cities
+[] - GET /continent/:id/cities/:id
+[] - PUT /continent/:id/cities/:id
+[] - DELETE /continent/:id/cities/:id
+

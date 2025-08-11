@@ -1,5 +1,6 @@
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
+import { ContinentMapper } from '../../@core/infra/adapters/drizzle/mapper/continent.mapper'
 import { continentsTable } from '../../db/schema'
 import { db } from '../../lib/dizzle'
 import { TFastifyTypedInstance } from '../../types/fastify-instance.types'
@@ -8,12 +9,12 @@ export async function ContinentsRoutes(app: TFastifyTypedInstance) {
   app.post('/continents', {
     schema: {
       tags: ['continents'],
-      description: 'Creation of continents',
+      description: 'Creation of continent',
       body: z.object({
         title: z.string(),
         description: z.string().optional(),
-        image_url: z.string(),
-        image_position: z.string(),
+        // image_url: z.string(), Vai ser um upload
+        // image_position: z.string(),
         bio: z.string(),
         countries: z.number(),
         languages: z.number(),
@@ -24,14 +25,12 @@ export async function ContinentsRoutes(app: TFastifyTypedInstance) {
       }
     }
   }, async (req, res) => {
-    const { bio, cities, countries, image_position, image_url, languages, title, description } = req.body
+    const { bio, cities, countries, languages, title, description } = req.body
 
     const continent = {
       bio,
       cities,
       countries,
-      image_position,
-      image_url,
       languages,
       title,
       description
@@ -67,7 +66,7 @@ export async function ContinentsRoutes(app: TFastifyTypedInstance) {
   }, async (req, res) => {
     const continents = await db.select().from(continentsTable)
 
-    return res.status(200).send({ continents: continents })
+    return res.status(200).send({ continents: continents.map((item) => ContinentMapper(item)) })
   })
 
   app.get('/continent/:id', {
@@ -98,7 +97,7 @@ export async function ContinentsRoutes(app: TFastifyTypedInstance) {
 
     const [continent] = await db.select().from(continentsTable).where(eq(continentsTable.id, Number(id)))
 
-    return res.status(200).send({ continent: continent })
+    return res.status(200).send({ continent: ContinentMapper(continent) })
   })
 
   // - Buscar com filtro.

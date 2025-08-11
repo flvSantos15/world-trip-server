@@ -1,7 +1,7 @@
 export type TBetterImagePosition = "bottom" | "center"
 
 export interface IContinentEntityProps {
-  id?: number
+  id: number
   title: string
   description: string
   image_url: string
