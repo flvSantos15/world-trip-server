@@ -8,7 +8,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Node.js, Drizzle, Testing, Postgres, Docker, TypeScript, Swagger, Deploy.
+- **Backend**: Node.js, Drizzle, Postgres, Docker, TypeScript, Swagger, Deploy.
 
 ## 🧠 What I Learned
 

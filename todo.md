@@ -3,18 +3,13 @@
 ## Tecnologies
 
 - Deploy (Hetzner ou AWS).
-- Swagger.
 - Testes.
-- Banco de dados (Postgres).
-- Drizzle ORM.
-- Docker & docker compose.
-- TypeScript.
 - Redis.
-- Fastify
 - Zod.
 
 ## TODO
 
+- Recuperar o Env.
 - Criar API de atualizar um continente.
 - Criar API de upload de imagem para o continente.
 - Criar API de criar cidade por continente.
